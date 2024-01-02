@@ -5,7 +5,7 @@ CONDA_PREFIX='envs/sam'
 conda create -y -p ${CONDA_PREFIX} python=3.11
 
 conda install -y -p ${CONDA_PREFIX} \
-    requests tqdm regex ftfy ipykernel \
+    requests tqdm regex ftfy ipykernel ipywidgets\
     numpy scipy scikit-learn matplotlib pandas \
     pyarrow hdf5 pytables \
     pillow
