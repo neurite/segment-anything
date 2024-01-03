@@ -22,12 +22,12 @@ OS_NAME=$(uname -s)
 
 if [ ${OS_NAME} == "Darwin" ]; then
     echo "Installing PyTorch, ONNX Runtime for MacOS..."
-    conda install -y -p ${CONDA_PREFIX} onnxruntime
+    conda install -y -p ${CONDA_PREFIX} onnx onnxruntime
     conda install -y -p ${CONDA_PREFIX} -c pytorch \
         pytorch=2.1.2 torchvision=0.16.2 
 elif [ ${OS_NAME} == "Linux" ]; then
     echo "Installing PyTorch, ONNX Runtime for Linux..."
-    ${CONDA_PREFIX}/bin/pip install onnxruntime-gpu
+    ${CONDA_PREFIX}/bin/pip install onnx==1.15.0 onnxruntime-gpu==1.15.0
     conda install -y -p ${CONDA_PREFIX} -c pytorch -c nvidia \
         pytorch=2.1.2 torchvision=0.16.2 pytorch-cuda=11.8
 else
